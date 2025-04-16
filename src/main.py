@@ -1,7 +1,12 @@
 # Main application file for Project Nightingale
 
+from scripts.ai_model import simple_ai_model
+from scripts.ai_utilities import preprocess_data, evaluate_model
+
 def main():
-    return "Welcome to Project Nightingale!"
+    input_data = "Sample input for AI model"
+    result = simple_ai_model(input_data)
+    return f"Welcome to Project Nightingale! AI Result: {result}"
 
 if __name__ == "__main__":
     main()
