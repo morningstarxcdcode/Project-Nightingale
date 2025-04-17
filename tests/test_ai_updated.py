@@ -1,19 +1,17 @@
 import unittest
-from src.main_updated import create_connection
+from src.main import main
 from scripts.ai_model import simple_ai_model
 
 class TestAI(unittest.TestCase):
     
     def test_main_function(self):
-        # Test the main function
         result = main()
-        self.assertIsNone(result)  # Assuming main() does not return anything
+        self.assertIn("Welcome to Project Nightingale!", result)
 
-    def test_database_connection(self):
-        # Test database connection
-        database = "project_nightingale.db"
-        conn = create_connection(database)
-        self.assertIsNotNone(conn)  # Ensure the connection is established
+    def test_simple_ai_model(self):
+        input_data = "Test input"
+        result = simple_ai_model(input_data)
+        self.assertEqual(result, "Processed data: Test input")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
