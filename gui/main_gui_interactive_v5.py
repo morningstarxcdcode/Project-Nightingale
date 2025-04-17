@@ -7,7 +7,7 @@ import subprocess
 # Add the scripts directory to the system path
 sys.path.append(os.path.join(os.path.dirname(__file__), '../scripts'))
 
-from networking import fetch_data_from_api
+from networking import fetch_data_from_api # type: ignore
 
 class Application(tk.Tk):
     def __init__(self):

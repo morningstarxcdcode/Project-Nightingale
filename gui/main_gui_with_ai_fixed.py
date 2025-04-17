@@ -6,7 +6,7 @@ import os
 # Add the scripts directory to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../scripts')))
 
-from ai_model import simple_ai_model  # Importing the AI model
+from ai_model import simple_ai_model  # type: ignore # Importing the AI model
 
 class Application(tk.Tk):
     def __init__(self):
