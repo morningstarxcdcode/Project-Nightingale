@@ -4,6 +4,39 @@ Thank you for considering contributing to Project-Nightingale! We welcome contri
 
 ## How to Contribute
 
+### Workflow Overview
+To streamline contributions and ensure a smooth development process, we have established the following workflow:
+
+1. **Define Workflow Steps**: 
+   - Each feature or bug fix should follow the steps outlined in the project workflow documentation.
+   - Use Markdown files to document the workflow steps and progress.
+
+2. **Track Progress**:
+   - Utilize GitHub Issues to track tasks and progress.
+   - Consider using project boards for visual representation of tasks.
+
+3. **Assign Responsibilities**:
+   - Team members can be assigned tasks through GitHub Issues or project boards.
+   - Clearly define roles and responsibilities for each task.
+
+4. **Recommended VS Code Extensions**:
+   - **GitLens**: Enhances Git capabilities within VS Code.
+   - **Markdown Preview**: For viewing documentation in Markdown format.
+   - **Project Manager**: Helps manage multiple projects and switch between them easily.
+
+5. **External Tool Integration**:
+   - Consider integrating with tools like Trello or Jira for task management.
+   - Use GitHub Actions for continuous integration and deployment.
+
+### Code Style
+- Follow PEP 8 guidelines for Python code.
+- Use meaningful variable and function names.
+- Write clear and concise comments and docstrings.
+
+### Testing
+- Ensure that your changes do not break existing tests.
+- Add tests for any new functionality you introduce.
+
 1. **Fork the Repository**: Click the "Fork" button at the top right of the repository page to create your own copy of the project.
 
 2. **Clone Your Fork**: Clone your forked repository to your local machine:
