@@ -8,7 +8,7 @@ tensorflow==2.12.1
 keras==3.10.0
 
 # Data Visualization
-matplotlib==3.6.0
+matplotlib==3.10.5
 seaborn==0.11.2
 
 # API Framework
