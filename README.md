@@ -67,7 +67,7 @@ Project Nightingale is a vigilant guardian of your codebase, designed to ensure 
 Run the main AI analysis engine:
 ```bash
 # Set Python path and run main application
-PYTHONPATH=/path/to/Project-Nightingale python src/main.py
+PYTHONPATH=$(pwd) python src/main.py
 ```
 
 ### Graphical User Interface
