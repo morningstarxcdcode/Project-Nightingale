@@ -15,8 +15,13 @@ The goal of Project Nightingale is to provide a personalized health monitoring a
 - Personalized health monitoring
 - Predictive analytics using machine learning
 - User-friendly interface for data visualization
+- Clean, well-structured codebase
+- Comprehensive testing suite
+- Both CLI and GUI interfaces
 
 ## Installation
+
+### For End Users
 
 1. Clone the repository:
 
@@ -30,18 +35,51 @@ The goal of Project Nightingale is to provide a personalized health monitoring a
    cd Project-Nightingale
    ```
 
-3. Install the required dependencies:
+3. Install the package:
 
    ```bash
-   pip install -r requirements.txt
+   pip install .
+   ```
+
+### For Developers
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/morningstarxcdcode/Project-Nightingale.git
+   cd Project-Nightingale
+   ```
+
+2. Install in development mode with testing dependencies:
+
+   ```bash
+   pip install -e .[dev]
    ```
 
 ## Usage
 
-To run the application, execute the following command:
+### Command Line Interface
+
+To run the application via command line:
 
 ```bash
+# If installed via pip
+nightingale
+
+# Or directly
 python src/main.py
+```
+
+### Graphical User Interface
+
+To run the GUI application:
+
+```bash
+# If installed via pip (requires tkinter)
+nightingale-gui
+
+# Or directly
+python gui/main_gui.py
 ```
 
 ### Sample API Calls
@@ -60,9 +98,29 @@ You can interact with the API using tools like `curl` or Python's `requests` lib
   curl -X POST -H "Content-Type: application/json" -d '{"data": "your_data_here"}' http://localhost:5000/api/data
   ```
 
+## Project Structure
+
+```
+Project-Nightingale/
+├── src/                    # Core application code
+│   └── main.py            # Main CLI entry point
+├── gui/                   # GUI components
+│   └── main_gui.py       # Main GUI application
+├── scripts/              # AI models and utilities
+│   ├── ai_model.py       # AI model implementation
+│   └── ai_utilities.py   # AI utility functions
+├── tests/                # Test suite
+│   ├── test_ai.py        # AI functionality tests
+│   └── test_ai_utilities.py # AI utilities tests
+├── docs/                 # Documentation
+├── requirements.txt      # Python dependencies
+├── setup.py             # Package setup configuration
+└── README.md           # This file
+```
+
 ## Running Tests
 
-To run the tests for this project, you can use `pytest`. Make sure you have installed the required dependencies first.
+To run the tests for this project, you can use `pytest`. Make sure you have installed the development dependencies first.
 
 Run the following command in your terminal:
 
@@ -70,11 +128,23 @@ Run the following command in your terminal:
 pytest tests/
 ```
 
-## Visuals
+For coverage reports:
 
-![Architecture Overview](path_to_architecture_diagram.png)
+```bash
+pytest tests/ --cov=src --cov=scripts --cov=gui
+```
 
-## Contribution
+## Development
+
+### Code Quality
+
+The project maintains high code quality through:
+- Comprehensive test suite
+- Clear documentation
+- Modular architecture
+- Error handling and validation
+
+### Contributing
 
 We welcome contributions! Please see the `CONTRIBUTING.md` file for guidelines on how to contribute to this project.
 
