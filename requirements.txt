@@ -2,7 +2,7 @@
 
 # Machine Learning Libraries
 numpy==2.3.2
-pandas==1.5.3
+pandas==2.3.1
 scikit-learn==1.7.1
 tensorflow==2.20.0
 keras==3.11.0
