@@ -1,5 +1,6 @@
 # Utility functions for AI in Project Nightingale
 
+
 def preprocess_data(data):
     """
     Preprocess the input data for the AI model.
@@ -7,6 +8,7 @@ def preprocess_data(data):
     """
     # Placeholder for preprocessing logic
     return data.strip().lower()
+
 
 def evaluate_model(predictions, actuals):
     """
