@@ -22,11 +22,7 @@ Project Nightingale is a vigilant guardian of your codebase, designed to ensure 
 - **Data Visualization** - Graphical representation of code metrics and AI predictions
 - **Multilingual Support** - Available in English and Spanish
 
-### 🔗 **Integration & Networking**
-- **API Integration** - Fetch data from external APIs for enhanced functionality
-- **JavaScript Utilities** - Web-based components for extended capabilities
-- **Version Control Integration** - Git integration for analyzing commit history and code changes
-- **IDE Plugin Ready** - Designed for future integration with popular IDEs
+
 
 ### 🛡️ **Security & Quality**
 - **CodeQL Integration** - Advanced static analysis with GitHub's CodeQL
@@ -34,7 +30,7 @@ Project Nightingale is a vigilant guardian of your codebase, designed to ensure 
 - **Performance Analysis** - Code performance bottleneck detection
 - **Customizable Rules Engine** - Define custom analysis rules for your team
 
-## 🚀 Quick Start
+
 
 ### Prerequisites
 - Python 3.9 or higher
@@ -48,29 +44,35 @@ Project Nightingale is a vigilant guardian of your codebase, designed to ensure 
    cd Project-Nightingale
    ```
 
-2. **Set up the Python environment:**
-   ```bash
-   # Optional: Create a virtual environment
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+
 
 3. **Install dependencies:**
    ```bash
-   pip install -r requirements.txt
+   pip install .
+   ```
+
+### For Developers
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/morningstarxcdcode/Project-Nightingale.git
+   cd Project-Nightingale
+   ```
+
+2. Install in development mode with testing dependencies:
+
+   ```bash
+   pip install -e .[dev]
    ```
 
 ## 📖 Usage
 
 ### Command Line Interface
 
+
 Run the main AI analysis engine:
 ```bash
-# Set Python path and run main application
-PYTHONPATH=$(pwd) python src/main.py
-```
-
-### Graphical User Interface
 
 Launch the interactive GUI:
 ```bash
@@ -95,11 +97,7 @@ const data = await fetchData('your-api-endpoint');
 const result = await postData('your-api-endpoint', yourData);
 ```
 
-### API Examples
 
-```python
-# Basic AI model usage
-from scripts.ai_model import simple_ai_model
 
 result = simple_ai_model("Your code or data here")
 print(result)  # Output: "Processed data: Your code or data here"
@@ -124,38 +122,7 @@ PYTHONPATH=/path/to/Project-Nightingale python -m pytest tests/ -v
 python -c "import sys; sys.path.append('.'); from tests.test_ai import *; import unittest; unittest.main()"
 ```
 
-## 🏗️ Project Structure
 
-```
-Project-Nightingale/
-├── 📁 src/                     # Core application source code
-│   ├── main.py                 # Main application entry point
-│   └── main_updated*.py        # Evolution versions
-├── 📁 gui/                     # Graphical user interface
-│   ├── main_gui.py             # Basic GUI application
-│   └── main_gui_interactive*.py # Advanced interactive versions
-├── 📁 scripts/                 # AI models and utilities
-│   ├── ai_model.py             # Core AI model implementation
-│   ├── ai_utilities.py         # AI helper functions
-│   └── networking.py           # Network and API utilities
-├── 📁 tests/                   # Comprehensive test suite
-├── 📁 docs/                    # Documentation
-├── 📁 locales/                 # Internationalization
-│   ├── en.json                 # English translations
-│   └── es.json                 # Spanish translations
-├── 📁 .github/                 # GitHub workflows and CodeQL
-└── 📄 requirements.txt         # Python dependencies
-```
-
-## 🛠️ Technology Stack
-
-- **Backend:** Python 3.9+, Flask
-- **AI/ML:** TensorFlow, Keras, Scikit-learn, NumPy, Pandas
-- **Frontend:** Tkinter (GUI), JavaScript
-- **Data Visualization:** Matplotlib, Seaborn
-- **Testing:** PyTest
-- **Security:** CodeQL, Custom vulnerability scanning
-- **APIs:** RESTful API integration via Requests
 
 ## 🤝 Contributing
 
