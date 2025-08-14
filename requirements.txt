@@ -4,7 +4,7 @@
 numpy==1.26.4
 pandas==1.5.3
 scikit-learn==1.7.1
-tensorflow==2.20.0
+tensorflow==2.12.1
 keras==3.11.0
 
 # Data Visualization
@@ -12,7 +12,9 @@ matplotlib==3.10.5
 seaborn==0.13.2
 
 # API Framework
-flask==3.1.1
+flask==2.3.3
 
 # Testing
 pytest==7.4.4
+fonttools>=4.43.0 # not directly required, pinned by Snyk to avoid a vulnerability
+pillow>=10.3.0 # not directly required, pinned by Snyk to avoid a vulnerability
