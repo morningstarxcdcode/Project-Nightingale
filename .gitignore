@@ -59,6 +59,7 @@ coverage.xml
 local_settings.py
 db.sqlite3
 
+
 # Flask stuff:
 instance/
 .webassets-cache
@@ -104,9 +105,4 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
-
-
-# IDE
-.vscode/
-.idea/
 
