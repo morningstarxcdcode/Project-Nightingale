@@ -78,6 +78,7 @@ target/
 
 
 
+
 # SageMath parsed files
 *.sage.py
 
@@ -106,16 +107,7 @@ venv.bak/
 dmypy.json
 
 
+
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
 
-
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
