@@ -17,17 +17,19 @@ Project Nightingale is a Python-based health monitoring and prediction system us
   - `/scripts/` - AI model and utility scripts  
   - `/gui/` - Tkinter-based GUI applications
   - `/tests/` - pytest test files
-  - `/requirements.txt` - Python dependencies (WARNING: numpy==1.23.5 incompatible with Python 3.12+)
+  - `/requirements.txt` - Python dependencies (compatible with Python 3.12+)
 
 ### Dependencies Installation
-- **IMPORTANT**: The pinned versions in requirements.txt are incompatible with Python 3.12+
-- **Working Installation Method**:
+- **RECOMMENDED**: Install dependencies using pip from requirements.txt:
+  ```bash
+  pip3 install -r requirements.txt
+  ```
+- **ALTERNATIVE**: Install via system packages if pip is not available:
   ```bash
   sudo apt update
   sudo apt install -y python3-tk python3-flask python3-pytest
   ```
-- **DO NOT** use `pip install -r requirements.txt` - it will fail with numpy version conflicts
-- **Alternative for ML dependencies**: Install compatible versions manually if needed:
+- **Manual ML dependencies** (if needed separately):
   ```bash
   pip3 install numpy pandas scikit-learn matplotlib seaborn tensorflow
   ```
@@ -43,7 +45,7 @@ Project Nightingale is a Python-based health monitoring and prediction system us
   cd /path/to/Project-Nightingale
   PYTHONPATH=/path/to/Project-Nightingale python3 -m pytest tests/test_ai.py -v
   ```
-- **Run Full Test Suite** (takes <1 second - includes 94 tests, 6 expected failures due to GUI/display issues):
+- **Run Full Test Suite** (takes <1 second - includes 94 tests, 4 expected failures due to GUI/display issues):
   ```bash
   cd /path/to/Project-Nightingale  
   PYTHONPATH=/path/to/Project-Nightingale python3 -m pytest tests/ -v
@@ -91,7 +93,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"data": "your_data_here"}'
 
 ### Expected Test Results
 - **Main test file**: 2 tests pass in tests/test_ai.py
-- **Full test suite**: 88 tests pass, 6 fail (GUI display issues - expected in headless environments)
+- **Full test suite**: 90 tests pass, 4 fail (GUI display issues - expected in headless environments)
 - **Test timing**: Complete test suite runs in under 1 second
 
 ### Working Components Validation
@@ -102,11 +104,11 @@ curl -X POST -H "Content-Type: application/json" -d '{"data": "your_data_here"}'
 - ✅ **Flask Support**: Available via apt packages, API endpoints functional
 - ✅ **SQLite Database**: Built-in Python support, project_nightingale.db file exists (empty)
 
-## Common Issues and Solutions
+### Common Issues and Solutions
 
 ### Dependency Problems
-- **Issue**: `pip install -r requirements.txt` fails with numpy version conflicts
-- **Solution**: Use system packages (`apt install python3-flask python3-pytest`) or install compatible versions manually
+- **Issue**: Need to install dependencies
+- **Solution**: Use `pip3 install -r requirements.txt` (recommended) or system packages
 
 ### Import Errors
 - **Issue**: `ModuleNotFoundError: No module named 'scripts'`
@@ -165,7 +167,7 @@ python3 -m pytest tests/test_ai.py -v
 python3 -c "import gui.main_gui; print('GUI works')"
 
 # Install working dependencies
-sudo apt install -y python3-tk python3-flask python3-pytest
+pip3 install -r requirements.txt
 ```
 
 **TIMING EXPECTATIONS**: All commands complete in under 1 second. No long builds or installations required for basic functionality.
