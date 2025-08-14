@@ -71,7 +71,7 @@ def predict():
     
     except Exception as e:
         logging.error(f"Error making prediction: {str(e)}")
-        return jsonify({"error": f"Prediction failed: {str(e)}"}), 500
+        return jsonify({"error": "Prediction failed due to an internal error."}), 500
 
 @app.route('/', methods=['GET'])
 def home():
