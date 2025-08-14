@@ -23,11 +23,12 @@ Project Nightingale is a Python-based health monitoring and prediction system us
 ### Running the Application
 - **CRITICAL**: Always set PYTHONPATH before running any Python modules:
   ```bash
-  export PYTHONPATH=/path/to/Project-Nightingale
+  export PYTHONPATH=/path/to/Project-Nightingale  # Replace with actual project path
   ```
+  **Note**: Replace `/path/to/Project-Nightingale` with your actual project directory path (e.g., `/home/runner/work/Project-Nightingale/Project-Nightingale`)
 - **Main Application**: 
   ```bash
-  PYTHONPATH=/path/to/Project-Nightingale python src/main.py
+  PYTHONPATH=/path/to/Project-Nightingale python src/main.py  # Replace with actual path
   ```
   - Executes instantly (<1 second)
   - Processes sample AI model data and outputs results to console
@@ -35,7 +36,7 @@ Project Nightingale is a Python-based health monitoring and prediction system us
 
 - **GUI Application**:
   ```bash
-  PYTHONPATH=/path/to/Project-Nightingale python gui/main_gui_with_ai_integration.py
+  PYTHONPATH=/path/to/Project-Nightingale python gui/main_gui_with_ai_integration.py  # Replace with actual path
   ```
   - Requires X11 display for GUI interaction
   - In headless environments, will fail with "no display name and no $DISPLAY environment variable" - this is expected
@@ -44,17 +45,17 @@ Project Nightingale is a Python-based health monitoring and prediction system us
 ### Testing
 - **Run All Tests**:
   ```bash
-  PYTHONPATH=/path/to/Project-Nightingale python -m pytest tests/ -v
+  PYTHONPATH=/path/to/Project-Nightingale python -m pytest tests/ -v  # Replace with actual path
   ```
   - Test suite completes in <1 second for core functionality. NEVER CANCEL.
   - 90+ test files available, many are versioned iterations
-  - Some GUI integration tests may fail in headless environments due to tkinter display requirements
+  - 4 GUI integration tests will fail in headless environments due to tkinter display requirements - this is expected
 
 - **Run Core Tests Only**:
   ```bash
-  PYTHONPATH=/path/to/Project-Nightingale python -m pytest tests/test_ai.py -v
+  PYTHONPATH=/path/to/Project-Nightingale python -m pytest tests/test_ai.py -v  # Replace with actual path
   ```
-  - Core AI tests complete in <0.5 seconds
+  - Core AI tests complete in <0.1 seconds
 
 ### Validation Scenarios
 **ALWAYS manually validate changes using these complete scenarios:**
@@ -147,7 +148,7 @@ Project Nightingale is a Python-based health monitoring and prediction system us
 ### Performance Expectations
 - **Dependencies Installation**: ~35 seconds for main requirements, ~4 seconds for dev requirements
 - **Application Startup**: Instant (<1 second)
-- **Test Execution**: <1 second for core tests, ~0.5 seconds for individual test files
+- **Test Execution**: ~0.2 seconds for full test suite (90 pass, 4 GUI tests fail in headless), <0.1 seconds for core AI tests
 - **NEVER CANCEL**: While operations are fast, always wait for completion
 
 ## Quick Reference Commands
@@ -159,7 +160,7 @@ pip install -r requirements.txt
 pip install -r requirements-dev.txt
 
 # Set environment (run in each session)
-export PYTHONPATH=/path/to/Project-Nightingale
+export PYTHONPATH=/path/to/Project-Nightingale  # Replace with actual project path
 
 # Run application
 python src/main.py
