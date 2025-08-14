@@ -1,5 +1,9 @@
 # Main application file for Project Nightingale
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from scripts.ai_model import simple_ai_model
 from scripts.ai_utilities import preprocess_data, evaluate_model
 import logging

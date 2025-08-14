@@ -28,10 +28,14 @@ class Application(tk.Tk):
         self.submit_button = tk.Button(self, text="Submit", command=self.process_input)
         self.submit_button.pack(pady=20)
 
-    def process_input(self):
-        input_data = self.input_entry.get()
+    def process_input(self, input_data=None):
+        """Process input data with AI model. Can be called with input_data parameter for testing."""
+        if input_data is None:
+            input_data = self.input_entry.get()
         result = simple_ai_model(input_data)  # Call the AI model
-        messagebox.showinfo("AI Result", result)  # Display the result
+        if hasattr(self, 'input_entry'):  # Only show messagebox if GUI is properly initialized
+            messagebox.showinfo("AI Result", result)  # Display the result
+        return result
 
 if __name__ == "__main__":
     app = Application()

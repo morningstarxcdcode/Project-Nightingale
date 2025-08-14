@@ -1,17 +1,9 @@
 # Requirements for Project-Nightingale
 
 # Machine Learning Libraries
-numpy==2.3.2
-pandas==2.3.1
-scikit-learn==1.7.1
 
-
-# Data Visualization
-matplotlib==3.10.5
-seaborn==0.13.2
 
 # API Framework
-flask==3.1.1
+
 
 # Testing
-
