@@ -9,7 +9,7 @@ keras==3.11.0
 
 # Data Visualization
 matplotlib==3.10.5
-seaborn==0.11.2
+seaborn==0.13.2
 
 # API Framework
 flask==2.3.3
