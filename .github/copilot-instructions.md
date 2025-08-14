@@ -149,7 +149,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"data": "your_data_here"}'
 - **AI Logic**: `/scripts/ai_model.py` - Core AI processing functions
 - **GUI Components**: `/gui/main_gui.py` - Primary GUI application
 - **Test Files**: `/tests/test_ai.py` - Main test coverage
-- **Configuration**: `/requirements.txt` - Dependencies (with version issues)
+- **Configuration**: `/requirements.txt` - Python dependencies (compatible with Python 3.12+)
 - **Documentation**: `/README.md`, `/CONTRIBUTING.md` - Project information
 
 ### Frequently Used Commands Summary
