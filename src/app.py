@@ -5,6 +5,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+import traceback
 from scripts.ai_model import simple_ai_model
 from scripts.ai_utilities import preprocess_data, evaluate_model
 import logging
@@ -49,7 +50,8 @@ def post_data():
     
     except Exception as e:
         logging.error(f"Error processing data: {str(e)}")
-        return jsonify({"error": f"Processing failed: {str(e)}"}), 500
+        logging.error(traceback.format_exc())
+        return jsonify({"error": "Processing failed due to an internal error."}), 500
 
 @app.route('/api/predict', methods=['POST'])
 def predict():
