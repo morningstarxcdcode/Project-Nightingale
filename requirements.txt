@@ -4,6 +4,6 @@
 
 
 # API Framework
-flask>=2.3.0
+
 
 # Testing
