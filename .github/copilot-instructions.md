@@ -8,6 +8,12 @@ Project Nightingale is a Python-based health monitoring and prediction system us
 
 ### Bootstrap and Environment Setup
 - **Python Version**: Requires Python 3.9+. Current environment uses Python 3.12.3.
+- **CRITICAL FIRST STEP**: Always install dependencies before any testing or application runs:
+  ```bash
+  sudo apt-get update && sudo apt-get install -y python3-tk
+  pip install -r requirements.txt
+  pip install -r requirements-dev.txt
+  ```
 - **System Dependencies**: Install tkinter for GUI functionality:
   ```bash
   sudo apt-get update && sudo apt-get install -y python3-tk
@@ -47,8 +53,8 @@ Project Nightingale is a Python-based health monitoring and prediction system us
   ```bash
   PYTHONPATH=/path/to/Project-Nightingale python -m pytest tests/ -v  # Replace with actual path
   ```
-  - Test suite completes in <1 second for core functionality. NEVER CANCEL.
-  - 90+ test files available, many are versioned iterations
+  - Test suite completes in ~0.3 seconds for full suite (94 tests). NEVER CANCEL.
+  - 85+ test files available, many are versioned iterations
   - 4 GUI integration tests will fail in headless environments due to tkinter display requirements - this is expected
 
 - **Run Core Tests Only**:
@@ -119,7 +125,7 @@ Project Nightingale is a Python-based health monitoring and prediction system us
 ### Dependencies
 - **Core ML Libraries**: numpy (2.3.2), pandas (2.3.1), scikit-learn (1.7.1)
 - **Visualization**: matplotlib (3.10.5), seaborn (0.13.2)
-- **Web Framework**: flask (2.3.3) (available but not actively used in current main app)
+- **Web Framework**: flask (3.1.1) (available but not actively used in current main app)
 - **Testing**: pytest (8.4.1)
 - **GUI**: tkinter (system package)
 
@@ -144,18 +150,19 @@ Project Nightingale is a Python-based health monitoring and prediction system us
 ### Test Failures
 - **GUI Integration Tests**: May fail in headless environments - this is expected
 - **Database Tests**: Some versioned tests may have different expectations - focus on core tests
+- **Total Test Count**: 94 tests (90 pass, 4 GUI tests fail as expected in headless environments)
 
 ### Performance Expectations
 - **Dependencies Installation**: ~35 seconds for main requirements, ~4 seconds for dev requirements
 - **Application Startup**: Instant (<1 second)
-- **Test Execution**: ~0.2 seconds for full test suite (90 pass, 4 GUI tests fail in headless), <0.1 seconds for core AI tests
+- **Test Execution**: ~0.3 seconds for full test suite (94 tests: 90 pass, 4 GUI tests fail in headless), <0.1 seconds for core AI tests
 - **NEVER CANCEL**: While operations are fast, always wait for completion
 
 ## Quick Reference Commands
 
 ```bash
-# Setup (run once)
-sudo apt-get install -y python3-tk
+# CRITICAL: Setup dependencies FIRST (run once before any testing)
+sudo apt-get update && sudo apt-get install -y python3-tk
 pip install -r requirements.txt
 pip install -r requirements-dev.txt
 
@@ -173,10 +180,11 @@ python -c "from scripts.ai_model import simple_ai_model; print(simple_ai_model('
 ```
 
 ## Development Workflow
-1. **Always set PYTHONPATH** before any Python operations
-2. **Test core functionality** with `python src/main.py`
-3. **Run relevant tests** with `python -m pytest tests/test_ai.py -v`
-4. **Validate AI workflow** using the manual validation scenarios above
-5. **Test GUI functionality** if making GUI changes (may require display)
+1. **Install dependencies FIRST** - must complete before any other operations
+2. **Always set PYTHONPATH** before any Python operations
+3. **Test core functionality** with `python src/main.py`
+4. **Run relevant tests** with `python -m pytest tests/test_ai.py -v`
+5. **Validate AI workflow** using the manual validation scenarios above
+6. **Test GUI functionality** if making GUI changes (may require display)
 
 This project prioritizes rapid development iteration with comprehensive testing. All operations complete quickly, enabling fast feedback cycles during development.
