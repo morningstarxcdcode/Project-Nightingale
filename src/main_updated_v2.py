@@ -22,16 +22,8 @@ def create_connection(db_file):
 
 def main(database="project_nightingale.db"):
     conn = create_connection(database)
-    
-    # Integrate CodeQL functionality to analyze the database and ensure code quality
-    if conn:
-        # Process data with AI model
-        input_data = "Sample input for AI model"
-        result = simple_ai_model(input_data)
-        conn.close()
-        return result
-    else:
-        return "Error: Could not connect to database"
+
 
 if __name__ == '__main__':
-    main()
+    result = main()
+    print(result)
