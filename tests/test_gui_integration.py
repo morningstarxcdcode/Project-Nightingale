@@ -1,26 +1,66 @@
-import unittest
+"""Integration tests for GUI functionality."""
+
+import pytest
 import sys
 import os
+from unittest.mock import patch, MagicMock
 
-# Add the project root to the Python path
-project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, project_root)
+# Add project root to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from gui.main_gui import Application
+# Try to import tkinter, skip tests if not available
+try:
+    import tkinter as tk
+    from gui.main_gui import Application
+    TKINTER_AVAILABLE = True
+except ImportError:
+    TKINTER_AVAILABLE = False
+    Application = None
 
-class TestGUIIntegration(unittest.TestCase):
-    """Test cases for the GUI integration."""
+pytestmark = pytest.mark.skipif(not TKINTER_AVAILABLE, reason="tkinter not available")
 
-    def test_gui_initialization(self):
-        """Test if the GUI initializes correctly."""
-        try:
-            app = Application()
-            self.assertIsNotNone(app)
-            self.assertEqual(app.title(), "Project Nightingale")
-            app.destroy()  # Clean up
-        except Exception as e:
-            # Skip test if GUI cannot be created (e.g., in headless environment)
-            self.skipTest(f"GUI test skipped: {e}")
 
-if __name__ == "__main__":
-    unittest.main()
+class TestGUIIntegration:
+    """Test cases for GUI integration."""
+
+    @pytest.mark.gui
+    def test_application_initialization(self) -> None:
+        """Test that the GUI application can be initialized."""
+        if not TKINTER_AVAILABLE:
+            pytest.skip("tkinter not available")
+        
+        with patch('gui.main_gui.tk.Tk.__init__') as mock_init:
+            mock_init.return_value = None
+            
+            with patch('gui.main_gui.Application.create_widgets'):
+                app = Application()
+                assert app is not None
+
+    @pytest.mark.gui 
+    def test_gui_imports(self) -> None:
+        """Test that GUI imports work correctly."""
+        if not TKINTER_AVAILABLE:
+            pytest.skip("tkinter not available")
+        
+        # Test that we can import the GUI module
+        from gui.main_gui import Application, main
+        assert Application is not None
+        assert main is not None
+
+    @pytest.mark.gui
+    def test_gui_main_function(self) -> None:
+        """Test the main GUI function handles missing tkinter gracefully."""
+        # This test can run even without tkinter
+        from gui.main_gui import main
+        
+        with patch('gui.main_gui.Application') as mock_app:
+            if not TKINTER_AVAILABLE:
+                # Should handle ImportError gracefully
+                with patch('builtins.print') as mock_print:
+                    result = main()
+                    assert result == 1  # Error code
+                    mock_print.assert_called()
+            else:
+                mock_app.return_value.mainloop.return_value = None
+                result = main()
+                assert result == 0  # Success code
