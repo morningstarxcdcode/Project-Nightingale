@@ -59,7 +59,6 @@ coverage.xml
 local_settings.py
 db.sqlite3
 
-
 # Flask stuff:
 instance/
 .webassets-cache
@@ -75,9 +74,6 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-
-
-
 
 # SageMath parsed files
 *.sage.py
@@ -105,4 +101,19 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
