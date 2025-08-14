@@ -1,8 +1,4 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
+
 .Python
 build/
 develop-eggs/
@@ -21,13 +17,6 @@ wheels/
 *.egg
 MANIFEST
 
-# Virtual environments
-venv/
-env/
-ENV/
-.venv/
-
-# IDEs
 .vscode/
 .idea/
 *.swp
@@ -46,16 +35,3 @@ Thumbs.db
 # Project specific
 *.db
 *.sqlite
-*.sqlite3
-logs/
-temp/
-tmp/
-
-# Testing
-.coverage
-htmlcov/
-.pytest_cache/
-.tox/
-
-# Documentation
-docs/_build/
