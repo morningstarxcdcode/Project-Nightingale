@@ -36,13 +36,48 @@ The goal of Project Nightingale is to provide a personalized health monitoring a
    pip install -r requirements.txt
    ```
 
+   **Note**: If you encounter dependency issues, you can install the minimal required packages:
+
+   ```bash
+   pip install flask pytest
+   ```
+
+   The core functionality will work with just these packages, and you can add additional ML libraries as needed.
+
 ## Usage
 
-To run the application, execute the following command:
+### Running the Core Application
+
+To run the main application, execute:
 
 ```bash
 python src/main.py
 ```
+
+### Running the Flask API Server
+
+To start the API server, execute:
+
+```bash
+python src/app.py
+```
+
+The API will be available at `http://localhost:5000` with the following endpoints:
+
+- `GET /` - API information and available endpoints
+- `GET /api/health` - Health check endpoint
+- `POST /api/data` - Process data through the AI model
+- `POST /api/predict` - Make predictions using the AI model
+
+### Running the GUI Application
+
+To start the graphical user interface, execute:
+
+```bash
+python gui/main_gui.py
+```
+
+**Note**: The GUI requires tkinter, which is typically included with Python installations. If running in a headless environment or if tkinter is not available, you can use the Flask API or command-line interface instead.
 
 ### Sample API Calls
 
@@ -58,6 +93,12 @@ You can interact with the API using tools like `curl` or Python's `requests` lib
 
   ```bash
   curl -X POST -H "Content-Type: application/json" -d '{"data": "your_data_here"}' http://localhost:5000/api/data
+  ```
+
+- **Make Predictions**:
+
+  ```bash
+  curl -X POST -H "Content-Type: application/json" -d '{"input": "prediction_input"}' http://localhost:5000/api/predict
   ```
 
 ## Running Tests
