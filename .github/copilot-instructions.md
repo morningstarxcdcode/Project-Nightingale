@@ -1,2 +1,1 @@
 # Project Nightingale - GitHub Copilot Instructions
-

@@ -1,5 +1,6 @@
 import requests
 
+
 def fetch_data_from_api(url):
     """Fetch data from the specified API URL."""
     try:

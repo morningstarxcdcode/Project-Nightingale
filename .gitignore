@@ -78,6 +78,7 @@ target/
 
 
 
+
 # SageMath parsed files
 *.sage.py
 
@@ -104,5 +105,4 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
 
