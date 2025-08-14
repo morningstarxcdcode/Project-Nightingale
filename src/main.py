@@ -11,10 +11,10 @@ from typing import Optional
 project_root = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(project_root, ".."))
 
-from scripts.ai_model import simple_ai_model
-from scripts.ai_utilities import preprocess_data
-from scripts.config import get_config
-from scripts.exceptions import (
+from scripts.ai_model import simple_ai_model  # noqa: E402
+from scripts.ai_utilities import preprocess_data  # noqa: E402
+from scripts.config import get_config  # noqa: E402
+from scripts.exceptions import (  # noqa: E402
     DatabaseConnectionError,
     DataValidationError,
     NightingaleError,

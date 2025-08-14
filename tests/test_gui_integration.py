@@ -2,7 +2,7 @@
 
 import os
 import sys
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
 import pytest
 
@@ -10,8 +10,9 @@ import pytest
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 # Try to import tkinter, skip tests if not available
+tkinter = None
 try:
-    import tkinter as tk
+    import tkinter  # noqa: F401
 
     from gui.main_gui import Application
 

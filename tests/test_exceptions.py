@@ -8,7 +8,7 @@ import pytest
 # Add project root to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from scripts.exceptions import (
+from scripts.exceptions import (  # noqa: E402
     ConfigurationError,
     DatabaseConnectionError,
     DataValidationError,

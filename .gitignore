@@ -3,6 +3,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
 
 # Distribution / packaging
 .Python
@@ -41,3 +45,15 @@ Thumbs.db
 # Project specific
 *.db
 *.sqlite
+
+# Testing and coverage
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Build and packaging
+build/
+dist/
+*.egg-info/

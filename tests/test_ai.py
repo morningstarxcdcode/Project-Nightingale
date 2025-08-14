@@ -9,9 +9,9 @@ import pytest
 # Add project root to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from scripts.ai_model import simple_ai_model, validate_input_data
-from scripts.exceptions import DataValidationError, ModelProcessingError
-from src.main import main
+from scripts.ai_model import simple_ai_model, validate_input_data  # noqa: E402
+from scripts.exceptions import DataValidationError  # noqa: E402
+from src.main import main  # noqa: E402
 
 
 class TestAI:
@@ -131,7 +131,6 @@ class TestAI:
     def test_model_thread_safety(self) -> None:
         """Test that the model can handle concurrent calls."""
         import threading
-        import time
 
         results = []
         errors = []

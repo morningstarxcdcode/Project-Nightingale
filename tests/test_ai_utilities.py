@@ -9,13 +9,13 @@ import pytest
 # Add project root to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from scripts.ai_utilities import (
+from scripts.ai_utilities import (  # noqa: E402
     calculate_metrics,
     evaluate_model,
     preprocess_data,
     validate_data_types,
 )
-from scripts.exceptions import DataValidationError, ModelProcessingError
+from scripts.exceptions import DataValidationError  # noqa: E402
 
 
 class TestAIUtilities:
