@@ -60,9 +60,7 @@ Project Nightingale is a vigilant guardian of your codebase, designed to ensure 
    pip install -r requirements.txt
    ```
 
-## 📖 Usage
 
-### Command Line Interface
 
 Run the main AI analysis engine:
 ```bash
@@ -70,7 +68,7 @@ Run the main AI analysis engine:
 PYTHONPATH=$(pwd) python src/main.py
 ```
 
-### Graphical User Interface
+
 
 Launch the interactive GUI:
 ```bash
@@ -95,7 +93,6 @@ const data = await fetchData('your-api-endpoint');
 const result = await postData('your-api-endpoint', yourData);
 ```
 
-### API Examples
 
 ```python
 # Basic AI model usage
