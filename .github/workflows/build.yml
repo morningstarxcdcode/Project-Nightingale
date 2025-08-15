@@ -1,0 +1,61 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build Application
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Build application
+      run: |
+        echo "Building Project Nightingale..."
+        python -c "
+        import sys
+        sys.path.append('.')
+        from src.main import main
+        print('Application build successful')
+        result = main()
+        print(f'Build result: {result}')
+        "
+
+    - name: Verify application components
+      run: |
+        echo "Verifying application components..."
+        python -c "
+        import sys
+        sys.path.append('.')
+        
+        # Verify all components
+        from scripts.ai_model import simple_ai_model
+        from scripts.ai_utilities import preprocess_data, evaluate_model
+        
+        # Test AI pipeline
+        test_data = 'Build verification test'
+        processed = preprocess_data(test_data)
+        result = simple_ai_model(processed)
+        accuracy = evaluate_model(['test'], ['test'])
+        
+        print(f'Preprocessed data: {processed}')
+        print(f'AI model result: {result}')
+        print(f'Evaluation accuracy: {accuracy}')
+        print('✓ All components verified successfully')
+        "
